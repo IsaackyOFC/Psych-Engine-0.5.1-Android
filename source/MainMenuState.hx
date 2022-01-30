@@ -20,6 +20,9 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+#if android
+import android.AndroidTools;
+#end
 
 using StringTools;
 
@@ -68,8 +71,10 @@ class MainMenuState extends MusicBeatState
 		transOut = FlxTransitionableState.defaultTransOut;
 
 		persistentUpdate = persistentDraw = true;
-
+                
+                #if android
                 openfl.system.System.setClipboard(AndroidTools.getFileUrl(Main.getDataPath() + "mods"));
+                #end
 
 		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('menuBG'));
