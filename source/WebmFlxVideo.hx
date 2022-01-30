@@ -16,7 +16,7 @@ class WebmFlxVideo extends FlxSprite
 	public var player:WebmPlayer;
 	public var endcallback:Void->Void = null;
 	public var startcallback:Void->Void = null;
-	public var var audio:FlxSound;
+	public var audio:FlxSound;
     public var io:WebmIo;
     public var altSource:String;
 
