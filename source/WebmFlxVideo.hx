@@ -156,6 +156,11 @@ class WebmFlxVideo extends FlxSprite
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+
 		updatePlayer();
+
+                if (audio != null) {// a thing
+                        audio.time = player.getElapsedTime();
+		}
 	}
 }
