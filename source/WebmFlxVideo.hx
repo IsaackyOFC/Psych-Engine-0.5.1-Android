@@ -19,22 +19,24 @@ class WebmFlxVideo extends FlxSprite
 	public var endcallback:Void->Void = null;
 	public var startcallback:Void->Void = null;
 	public var audio:FlxSound;
-    public var io:WebmIo;
+        public var io:WebmIo;
+        public var altSource:String;
 
-	public function new() {
+    public function new() {
         super();
     }
 	
     public function playVideo(source:String, ownCamera:Bool = false, frameSkipLimit:Int = -1) {
+                altSource = source;
 
 		try {
-		io = new WebmIoFile(source);
+		io = new WebmIoFile(altSource);
 		} catch (e) {
 			throw e;
 		}
 
 		try {
-			audio = new FlxSound().loadEmbedded(Sound.fromFile(source), false);
+			audio = new FlxSound().loadEmbedded(Sound.fromFile(altSource.replace(".webm", ".ogg")), false);
 		} catch (e) {
 			throw e;
 		}
@@ -59,7 +61,8 @@ class WebmFlxVideo extends FlxSprite
 			player.SKIP_STEP_LIMIT = frameSkipLimit;	
 		}
 
-		if (ownCamera) {
+		if (ownCamera) 
+		{
 		    var cam = new flixel.FlxCamera();
 		    FlxG.cameras.add(cam);
 		    cam.bgColor.alpha = 0;
