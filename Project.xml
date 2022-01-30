@@ -127,13 +127,12 @@
 	<haxelib name="faxe" if='switch'/>
 	<!--<haxelib name="polymod"/> -->
 	<haxelib name="discord_rpc" if="desktop"/>
-        <haxelib name="extension-webm" if="VIDEOS_ALLOWED android"/>
+        <haxelib name="extension-webview" if="VIDEOS_ALLOWED android"/>
         <haxelib name="AndroidTools" if="android"/>
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
 
         <config:android permission="android.permission.READ_EXTERNAL_STORAGE" if="android"/>
         <config:android permission="android.permission.WRITE_EXTERNAL_STORAGE" if="android"/>
-        <config:android permission="android.permission.MANAGE_EXTERNAL_STORAGE" if="android"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
