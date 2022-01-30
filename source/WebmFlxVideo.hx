@@ -3,6 +3,8 @@ package;
 import flixel.system.FlxSound;
 import flixel.FlxSprite;
 import flixel.FlxG;
+import openfl.media.Sound;
+import openfl.Lib;
 #if sys
 import sys.FileSystem;
 import sys.io.File;
